@@ -118,7 +118,9 @@ public class RemotingUtil {
                     if (ip.startsWith("127.0") || ip.startsWith("192.168")) {
                         continue;
                     }
-
+                    if(ip.startsWith("10.")){
+                        return ip;
+                    }
                     return ip;
                 }
 
