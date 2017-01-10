@@ -39,7 +39,7 @@ public class RebalanceService extends ServiceThread {
     }
 
     @Override
-    public void run() {
+    public void run() { //try catch here is better
         log.info(this.getServiceName() + " service started");
 
         while (!this.isStoped()) {
