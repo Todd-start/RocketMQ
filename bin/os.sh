@@ -9,20 +9,16 @@
 #
 #     http://www.apache.org/licenses/LICENSE-2.0
 #
-#  Unless required by applicable law or agreed to in writing, software
-#  distributed under the License is distributed on an "AS IS" BASIS,
-#  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-#  See the License for the specific language governing permissions and
-#  limitations under the License.
-
-#
-# Execute Only Once
-#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
 
 export PATH=$PATH:/sbin
 
-sudo sysctl -w vm.extra_free_kbytes=3000000
-sudo sysctl -w vm.min_free_kbytes=1000000
+# sudo sysctl -w vm.extra_free_kbytes=2000000
+# sudo sysctl -w vm.min_free_kbytes=1000000
 sudo sysctl -w vm.overcommit_memory=1
 sudo sysctl -w vm.drop_caches=1
 sudo sysctl -w vm.zone_reclaim_mode=0
@@ -31,7 +27,7 @@ sudo sysctl -w vm.dirty_background_ratio=50
 sudo sysctl -w vm.dirty_ratio=50
 sudo sysctl -w vm.dirty_writeback_centisecs=360000
 sudo sysctl -w vm.page-cluster=3
-sudo sysctl -w vm.swappiness=0
+sudo sysctl -w vm.swappiness=1
 
 echo 'ulimit -n 655350' >> /etc/profile
 echo '* hard nofile 655350' >> /etc/security/limits.conf
